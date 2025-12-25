@@ -1,0 +1,12 @@
+services:
+  mintlify:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/docs
+      # This line tells Docker to use its own node_modules 
+      # and ignore the ones on your Windows machine
+      - /docs/node_modules
+    environment:
+      - NODE_ENV=development
